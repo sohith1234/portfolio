@@ -56,13 +56,19 @@ const EmailSection = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
-          <Link href="linkedin.com">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
-        </div>
+        <Link href="https://github.com/sohithk2002">
+          <Image src={GithubIcon} alt="Github Icon" width={24} height={24} />
+        </Link>
+        <Link href="https://linkedin.com/in/sohithkampalli">
+          <Image src={LinkedinIcon} alt="Linkedin Icon" width={24} height={24} />
+        </Link>
+        <Link href="https://twitter.com/sohithk2002">
+          <Image src="/twitter-icon.svg" alt="Twitter Icon" width={24} height={24} />
+        </Link>
+        <Link href="https://www.instagram.com/sohithk2002">
+          <Image src="/instagram-icon.svg" alt="Instagram Icon" width={24} height={24} />
+        </Link>
+      </div>
       </div>
       <div>
         {emailSubmitted ? (
