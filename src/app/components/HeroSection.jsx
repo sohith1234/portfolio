@@ -22,13 +22,13 @@ const HeroSection = () => {
             <br />
             <TypeAnimation
               sequence={[
-                "Judy",
+                "Sohith Kampalli", // Updated to your name
                 1000,
-                "Web Developer",
+                "Full-Stack Engineer",
                 1000,
-                "Mobile Developer",
+                "Cloud Engineer",
                 1000,
-                "UI/UX Designer",
+                "AI & Data Engineer",
                 1000,
               ]}
               wrapper="span"
@@ -37,8 +37,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+            Full-Stack & Cloud Engineer specializing in scalable web and cloud applications with expertise in AWS, GCP, Kubernetes, and more. Skilled in backend optimization, CI/CD automation, and API development.
           </p>
           <div>
             <Link
