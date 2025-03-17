@@ -10,7 +10,7 @@ export default function AISection() {
 
   return (
     <>
-      {/* Floating Button with Icons8 Icon */}
+      {/* Floating Button with Icon */}
       <div className="fixed bottom-10 right-10 z-50">
         <button
           onClick={() => setIsPopupOpen(!isPopupOpen)}

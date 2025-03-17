@@ -47,7 +47,7 @@ const HeroSection = () => {
               Hire Me
             </Link>
             <Link
-              href="/Sohith Kampalli_updated resume.pdf"  // Path to the CV PDF
+              href="/Sohith Kampalli_updated resume.pdf" // Path to the CV PDF
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
               download
             >
@@ -63,13 +63,13 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+          <div className="rounded-full overflow-hidden w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative mx-auto">
             <Image
-              src="/images/hero-image.png"
+              src="/images/hero-image.avif"
               alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
+              className="object-cover"
+              width={400}
+              height={400}
             />
           </div>
         </motion.div>
