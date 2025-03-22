@@ -3,32 +3,64 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { FaNodeJs, FaReact, FaAws, FaDocker, FaGithub, FaDatabase, FaJava, FaPython, FaHtml5, FaCss3Alt, FaJenkins, FaLinux } from "react-icons/fa";
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React.js</li>
-        <li>Next.js</li>
-        <li>TypeScript</li>
-        <li>Spring Boot</li>
-        <li>Docker</li>
-        <li>Kubernetes</li>
-        <li>AWS (Lambda, EC2, S3)</li>
-        <li>GCP</li>
-        <li>CI/CD Pipelines (Jenkins, GitHub Actions)</li>
-        <li>Redis Caching</li>
-        <li>OAuth, JWT</li>
-        <li>Power BI</li>
-        <li>Tableau</li>
-      </ul>
+      <div className="grid grid-cols-4 gap-4">
+        <div className="flex flex-col items-center">
+          <FaNodeJs className="text-4xl mb-2" />
+          <span>Node.js</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaReact className="text-4xl mb-2" />
+          <span>React.js</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaAws className="text-4xl mb-2" />
+          <span>AWS</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaDocker className="text-4xl mb-2" />
+          <span>Docker</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaGithub className="text-4xl mb-2" />
+          <span>GitHub</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaDatabase className="text-4xl mb-2" />
+          <span>PostgreSQL</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaJava className="text-4xl mb-2" />
+          <span>Java</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaPython className="text-4xl mb-2" />
+          <span>Python</span>
+        </div>
+        {/* New Icons */}
+        <div className="flex flex-col items-center">
+          <FaHtml5 className="text-4xl mb-2" />
+          <span>HTML5</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaCss3Alt className="text-4xl mb-2" />
+          <span>CSS3</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaJenkins className="text-4xl mb-2" />
+          <span>Jenkins</span>
+        </div>
+        <div className="flex flex-col items-center">
+          <FaLinux className="text-4xl mb-2" />
+          <span>Linux</span>
+        </div>
+      </div>
     ),
   },
   {
