@@ -47,23 +47,38 @@ const Navbar = ({ theme, toggleTheme }) => {
             Kampalli
           </span>
         </Link>
-        <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
-            <button
-              onClick={() => setNavbarOpen(true)}
-              className={`flex items-center px-3 py-2 border rounded ${theme === "dark" ? "border-slate-200 text-slate-200 hover:text-white hover:border-white" : "border-gray-800 text-gray-800 hover:text-black hover:border-black"}`}
-            >
-              <Bars3Icon className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className={`flex items-center px-3 py-2 border rounded ${theme === "dark" ? "border-slate-200 text-slate-200 hover:text-white hover:border-white" : "border-gray-800 text-gray-800 hover:text-black hover:border-black"}`}
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          )}
+        <div className="flex items-center space-x-4">
+          {/* Theme Toggle Button (Visible on all screens) */}
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-full ${theme === "dark" ? "bg-gray-800" : "bg-gray-200"}`}
+          >
+            {theme === "dark" ? (
+              <SunIcon className="h-5 w-5 text-yellow-400" />
+            ) : (
+              <MoonIcon className="h-5 w-5 text-gray-800" />
+            )}
+          </button>
+          {/* Mobile Menu Toggle Button */}
+          <div className="mobile-menu block md:hidden">
+            {!navbarOpen ? (
+              <button
+                onClick={() => setNavbarOpen(true)}
+                className={`flex items-center px-3 py-2 border rounded ${theme === "dark" ? "border-slate-200 text-slate-200 hover:text-white hover:border-white" : "border-gray-800 text-gray-800 hover:text-black hover:border-black"}`}
+              >
+                <Bars3Icon className="h-5 w-5" />
+              </button>
+            ) : (
+              <button
+                onClick={() => setNavbarOpen(false)}
+                className={`flex items-center px-3 py-2 border rounded ${theme === "dark" ? "border-slate-200 text-slate-200 hover:text-white hover:border-white" : "border-gray-800 text-gray-800 hover:text-black hover:border-black"}`}
+              >
+                <XMarkIcon className="h-5 w-5" />
+              </button>
+            )}
+          </div>
         </div>
+        {/* Desktop Menu */}
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
@@ -76,22 +91,10 @@ const Navbar = ({ theme, toggleTheme }) => {
                 </button>
               </li>
             ))}
-            {/* Theme Toggle Button */}
-            <li>
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-full ${theme === "dark" ? "bg-gray-800" : "bg-gray-200"}`}
-              >
-                {theme === "dark" ? (
-                  <SunIcon className="h-5 w-5 text-yellow-400" />
-                ) : (
-                  <MoonIcon className="h-5 w-5 text-gray-800" />
-                )}
-              </button>
-            </li>
           </ul>
         </div>
       </div>
+      {/* Mobile Menu Overlay */}
       {navbarOpen ? <MenuOverlay links={navLinks} theme={theme} /> : null}
     </nav>
   );
