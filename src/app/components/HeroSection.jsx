@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const HeroSection = () => {
+const HeroSection = ({ theme }) => {
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -15,7 +15,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1 className={`mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold ${theme === "dark" ? "text-white" : "text-black"}`}>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I&apos;m{" "}
             </span>
@@ -36,7 +36,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className={`text-base sm:text-lg mb-6 lg:text-xl ${theme === "dark" ? "text-[#ADB7BE]" : "text-gray-700"}`}>
             Full-Stack & Cloud Engineer specializing in scalable web and cloud applications with expertise in AWS, GCP, Kubernetes, and more. Skilled in backend optimization, CI/CD automation, and API development.
           </p>
           <div>
@@ -51,7 +51,7 @@ const HeroSection = () => {
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
               download
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <span className={`block ${theme === "dark" ? "bg-[#121212]" : "bg-white"} hover:bg-slate-800 rounded-full px-5 py-2`}>
                 Download CV
               </span>
             </Link>

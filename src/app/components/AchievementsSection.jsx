@@ -30,23 +30,23 @@ const achievementsList = [
   },
 ];
 
-const AchievementsSection = () => {
+const AchievementsSection = ({ theme }) => {
   return (
     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
+      <div className={`sm:border ${theme === "dark" ? "sm:border-[#33353F]" : "sm:border-gray-200"} rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between`}>
         {achievementsList.map((achievement, index) => {
           return (
             <div
               key={index}
               className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
             >
-              <h2 className="text-white text-4xl font-bold flex flex-row">
+              <h2 className={`text-4xl font-bold flex flex-row ${theme === "dark" ? "text-white" : "text-black"}`}>
                 {achievement.prefix}
                 <AnimatedNumbers
                   includeComma
                   animateToNumber={parseInt(achievement.value)}
                   locale="en-US"
-                  className="text-white text-4xl font-bold"
+                  className={`text-4xl font-bold ${theme === "dark" ? "text-white" : "text-black"}`}
                   configs={(_, index) => {
                     return {
                       mass: 1,
@@ -57,7 +57,9 @@ const AchievementsSection = () => {
                 />
                 {achievement.postfix}
               </h2>
-              <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
+              <p className={`text-base ${theme === "dark" ? "text-[#ADB7BE]" : "text-gray-700"}`}>
+                {achievement.metric}
+              </p>
             </div>
           );
         })}

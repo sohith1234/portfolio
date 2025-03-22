@@ -16,7 +16,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
+    title: "Photography Portfolio Website",
     description: "Project 2 description",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
@@ -61,7 +61,7 @@ const projectsData = [
   },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ theme }) => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -81,24 +81,27 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className={`text-center text-4xl font-bold ${theme === "dark" ? "text-white" : "text-black"} mt-4 mb-8 md:mb-12`}>
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      <div className={`${theme === "dark" ? "text-white" : "text-black"} flex flex-row justify-center items-center gap-2 py-6`}>
         <ProjectTag
           onClick={handleTagChange}
           name="All"
           isSelected={tag === "All"}
+          theme={theme}
         />
         <ProjectTag
           onClick={handleTagChange}
           name="Web"
           isSelected={tag === "Web"}
+          theme={theme}
         />
         <ProjectTag
           onClick={handleTagChange}
           name="Mobile"
           isSelected={tag === "Mobile"}
+          theme={theme}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
@@ -117,6 +120,7 @@ const ProjectsSection = () => {
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              theme={theme}
             />
           </motion.li>
         ))}
